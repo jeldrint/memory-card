@@ -7,4 +7,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 150px;
+    cursor: pointer;
+}
+
+.poke-img:hover{
+    filter: contrast(1.5);
+}
+
+.game-area{
+    display: flex;
+    margin: 100px 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 25px;
 }

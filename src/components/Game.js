@@ -1,6 +1,12 @@
 import React, {useState,useEffect} from "react";
 import PokeAPI from "./PokeAPI";
 
-const Game = () => {
-    
+const Game = (props) => {
+    return (
+        <>
+
+        </>
+    )
 }
+
+export default Game

@@ -14,14 +14,35 @@ const PokeAPI = () => {
         fetchPokeData()
     },[])
 
+    const numArr = GenerateRandomNumbers();
+    const sortedNumArr = numArr.sort((a,b)=>a-b);
+
     return(
         <>
             <RenderImg pokemon={pokemon}/>
             <RenderImg pokemon={pokemon}/>
             <RenderImg pokemon={pokemon}/>
             <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
         </>
     )
+}
+
+const GenerateRandomNumbers = () => {
+    let numArr = [];
+
+    for(let i=0; i<12; i++){
+        numArr.push(Math.floor(Math.random()*150) +1);
+    }
+
+    return numArr
 }
 
 export default PokeAPI
