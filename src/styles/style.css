@@ -1,0 +1,10 @@
+
+.poke-name{
+    font-size: large;
+}
+
+.poke-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

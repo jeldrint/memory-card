@@ -4,8 +4,8 @@ import PokeAPI from './components/PokeAPI';
 const App = () => {
   
   return (
-    <div>
-      <h1>Hello Boss</h1>
+    <div className='container'>
+      <h1>Hello, Player</h1>
       <PokeAPI />      
     </div>
   )

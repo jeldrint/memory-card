@@ -1,23 +1,26 @@
-import React from 'react'
+import React, {useState,useEffect, Suspense} from 'react'
+import RenderImg from './RenderImg';
 
 const PokeAPI = () => {
-    let pokeArr = [];
-
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-    .then(response => response.json())
-    .then(pokemons => {
-        for(let i=0; i < pokemons.results.length; i++){
-            pokeArr.push(pokemons.results[i])
+    const [pokemon, setPokemon] = useState([]);
+    
+    useEffect(()=>{
+        const fetchPokeData = async () => {
+            const data = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+            const response = await data.json();
+            setPokemon(response.results)
         }
-    })
-    console.log(pokeArr)
+
+        fetchPokeData()
+    },[])
+
     return(
-        <div>
-            {pokeArr.map(item=> {
-               return <pre>{JSON.stringify(item)}</pre>
-            })}
-            <h1>Asan na yung mga pokemon?</h1>
-        </div>
+        <>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+            <RenderImg pokemon={pokemon}/>
+        </>
     )
 }
 
