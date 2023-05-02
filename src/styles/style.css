@@ -1,6 +1,7 @@
 
 .poke-name{
     font-size: large;
+    display: flex;
 }
 
 .poke-img{
@@ -20,6 +21,6 @@
     margin: 100px 100px;
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 30px;
-    column-gap: 25px;
+    row-gap: 50px;
+    column-gap: 50px;
 }

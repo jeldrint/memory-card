@@ -1,22 +1,20 @@
 import React from "react";
 import '../styles/style.css'
-import Game from './Game';
 
 const RenderImg = (props) => {
-    let randNum = Math.floor(Math.random()*150) +1
-    const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${randNum}.svg`
+    const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${props.index}.svg`
 
     let pokeName = ''
-    if(props.pokemon[randNum-1] == undefined){
+    if(props.pokemon[props.index-1] === undefined){
         pokeName = 'loading...'
     }else{
-        pokeName = props.pokemon[randNum-1].name
+        pokeName = props.pokemon[props.index-1].name
     }
     return(
         <>
             <div className='poke-img' id={pokeName}>
-                <img src = {imgSrc} style={{height: '120px'}}/>
-                <p className="poke-name">{pokeName}</p>
+                <img src = {imgSrc} style={{height: '150px', width: '150px'}}/>
+                <div className="poke-name">{pokeName}</div>
             </div>
         </>
     )
