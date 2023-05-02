@@ -16,7 +16,7 @@ const PokeAPI = () => {
 
     return(
         <>
-            <Game pokemon={pokemon} />
+            <Game pokemon={pokemon}/>
         </>
     )
 }
