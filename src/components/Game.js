@@ -7,11 +7,13 @@ const Game = (props) => {
     const [pokeArr, setpokeArr] = useState([]);
     const [score,setScore] = useState(0);
     const [pokeName,setPokeName] = useState('');
+    const [playerSelect, setPlayerSelect] = useState([])
 
     useEffect(()=> {
         const documentOnClick = (e) =>{
             if(e.target.className === 'poke-img' || e.target.parentNode.className === 'poke-img' || pokeArr.length === 0){
                 if(e.target.className === 'poke-img'){
+                    setPlayerSelect(prev=> [...prev,pokeName])
                     setPokeName(e.target.id)
                 }else{
                     setPokeName(e.target.parentNode.id)
@@ -24,6 +26,7 @@ const Game = (props) => {
                 e.preventDefault();
             }
         }
+        console.log(playerSelect,pokeName);
         document.addEventListener('click',documentOnClick)
         return () => document.removeEventListener('click',documentOnClick)
 
