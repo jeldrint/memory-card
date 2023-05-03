@@ -5,12 +5,7 @@ import Scoring from './components/Scoring'
 const App = () => {
   
   return (
-    <div className='container'>
-      <Scoring />
-      <div className="game-area">
-        <PokeAPI/>      
-      </div>    
-    </div>
+    <PokeAPI />      
   )
 }
 

@@ -5,20 +5,21 @@ import Scoring from "./Scoring";
 
 const Game = (props) => {
     const [pokeArr, setpokeArr] = useState([]);
+    const [score,setScore] = useState(0);
+    const [pokeName,setPokeName] = useState('');
 
     useEffect(()=> {
         const documentOnClick = (e) =>{
             if(e.target.className === 'poke-img' || e.target.parentNode.className === 'poke-img' || pokeArr.length === 0){
-                let pokeName = ''
                 if(e.target.className === 'poke-img'){
-                    pokeName = e.target.id
+                    setPokeName(e.target.id)
                 }else{
-                    pokeName = e.target.parentNode.id
+                    setPokeName(e.target.parentNode.id)
                 }
-                Scoring(pokeName);
+                setScore(prev=>prev+1);
                 setpokeArr(()=>{
                     return DivSwitch(pokeArr);
-                })    
+                })
             }else{
                 e.preventDefault();
             }
@@ -30,11 +31,17 @@ const Game = (props) => {
 
     return (
         <>
-            {pokeArr.map(randNum => {
-                return(
-                    <RenderImg pokemon={props.pokemon} index={randNum}/>
-                )
-            })}
+            <div className='container'>
+                <Scoring score={score} pokeName={pokeName} />
+                <div className="game-area">
+                    {pokeArr.map(randNum => {
+                    return(
+                        <RenderImg pokemon={props.pokemon} index={randNum}/>
+                    )
+                    })}
+                </div>
+            </div>
+
         </>
     )
 }

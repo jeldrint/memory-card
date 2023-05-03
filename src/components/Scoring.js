@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const Scoring = (pokeName) => {
-    console.log(pokeName)
+const Scoring = (props) => {
+    console.log(props.score, props.pokeName);
 
-    return(
-        <>
-            <h1>Hello, {pokeName}</h1>
-        </>
+    return (
+        <h1>Hello Player, {props.score}</h1>
     )
 }
 

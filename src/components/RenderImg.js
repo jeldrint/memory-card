@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/style.css'
+import Scoring from "./Scoring";
 
 const RenderImg = (props) => {
     const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${props.index}.svg`
