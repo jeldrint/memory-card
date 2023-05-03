@@ -24,3 +24,15 @@
     row-gap: 50px;
     column-gap: 50px;
 }
+
+.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.interface-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

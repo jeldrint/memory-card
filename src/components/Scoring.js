@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 const Scoring = (props) => {
-    const [nameArr, setNameArr] = useState([])
 
-    useEffect (()=> {
-        if(props.pokeName === undefined){
-            setNameArr([]);
-        }
-        setNameArr(prevName => {
-            return [...prevName, 'hello']
-        })    
-    },[])
-    //console.log(props.score, props.pokeName, nameArr);
 
     return (
-        <h1>Hello Player, {props.score}</h1>
+        <div className="interface">
+            <h1>Hello Player.</h1>
+            <div className="interface-right">
+                <h3 style={{margin: 0}}>Your score is {props.score} </h3>
+                <h3 style={{margin: 0}}>Level 1 </h3>
+            </div>
+        </div>
     )
 }
 
