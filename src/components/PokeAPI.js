@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import Game from './Game'
 
 const PokeAPI = () => {
-    const [pokemon, setPokemon] = useState([]);
+    const [pokemon, setPokemon] = useState([{}]);
     
     useEffect(()=>{
         const fetchPokeData = async () => {
